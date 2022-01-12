@@ -1,91 +1,119 @@
-header {
-    width: 100%;
-    /* margin: 0; */
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    padding: 30px;
-    background-color: black;
-    color: white;
-}
-
-#homebutton {
-    float: left;
-    width: 0;
-}
-
-#homebutton img {
-    filter: invert(30%);
-    width: 30px;
-    transition-property: width, filter;
-    transition-duration: 0.5s;
-
-}
-
-#homebutton img:hover {
-    filter: invert(50%);
-    width: 35px;
-    transition-property: width, filter;
-    transition-duration: 1.5s;
-
-}
-
-.liens {
-    position: relative;
-}
-
-.liens ul {
-    padding-inline: 0;
-}
-
-.liens ul li {
-    list-style: none;
-    min-height: 50px;
-    vertical-align: top;
-    margin-inline: 3px;
-    display: inline-block;
-}
-
-.liens ul li img {
-    filter: invert(70%);
-    width: 30px;
-    transition-property: width, filter;
-    transition-duration: 1s;
-}
-
-.liens ul li img:hover, .dropdown:hover .dropdown-content+img {
-    filter: invert(1);
-    width: 40px;
-    transition-property: width, filter;
-    transition-duration: 0.5s;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    height: 0;
-    background-color: #1F1F1F;
-    min-width: 160px;
-    box-shadow: 2px 2px 16px 0px rgba(255, 255, 255, 0.2);
-    transition-property: height;
-    transition-duration: 0.5s;
-    width: fit-content;
-}
-
-.dropdown:hover .dropdown-content {
-    display: grid;
-    height: auto;
-    transition-property: height;
-    transition-duration: 0.5s;
-}
-
-.dropdown-content > * {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 1px solid #555;
-}
-
-.dropdown-content > *:hover {
-    background-color: #252525
+header {
+    width: 100%;
+    /* margin: 0; */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 30px;
+    background-color: black;
+    color: white;
+}
+
+body {
+    cursor: url("./cursors/cursor.svg"), auto;
+}
+
+a:hover,
+input[type='button']:hover {
+    cursor: url("./cursors/cursor_hover.svg"), pointer;
+}
+
+input[type='text']:hover,
+input[type='email']:hover,
+input[type='number']:hover,
+input[type='password']:hover,
+input[type='search']:hover,
+input[type='tel']:hover,
+input[type='name']:hover,
+input[type='url']:hover {
+    cursor: url("./cursors/cursor_text.svg"), text;
+}
+
+*:disabled:hover {
+    cursor: url("./cursors/cursor_disabled.svg"), disabled;
+}
+
+#homebutton {
+    float: left;
+    width: 0;
+}
+
+#homebutton img {
+    filter: invert(30%);
+    width: 30px;
+    transition-property: width, filter;
+    transition-duration: 0.5s;
+
+}
+
+#homebutton img:hover {
+    filter: invert(50%);
+    width: 35px;
+    transition-property: width, filter;
+    transition-duration: 1.5s;
+
+}
+
+.liens {
+    position: relative;
+}
+
+.liens ul {
+    padding-inline: 0;
+}
+
+.liens ul li {
+    list-style: none;
+    min-height: 50px;
+    vertical-align: top;
+    margin-inline: 3px;
+    display: inline-block;
+}
+
+.liens ul li img,
+input[type="image"] {
+    filter: invert(70%);
+    width: 30px;
+    transition-property: width, filter;
+    transition-duration: 1s;
+}
+
+.liens ul li:hover img,
+input[type="image"]:hover {
+    filter: invert(1);
+    width: 40px;
+    transition-property: width, filter;
+    transition-duration: 0.5s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    height: 0;
+    background-color: #1F1F1F;
+    min-width: 160px;
+    box-shadow: 2px 2px 16px 0px rgba(255, 255, 255, 0.2);
+    transition-property: height;
+    transition-duration: 0.5s;
+    width: fit-content;
+}
+
+.dropdown:hover .dropdown-content {
+    display: grid;
+    height: fit-content;
+    transition-property: height;
+    transition-duration: 0.5s;
+}
+
+.dropdown-content>* {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    height: 40px;
+    width: max-content;
+    padding: 5px 10px;
+    border: 1px solid #555;
+}
+
+.dropdown-content>*:hover {
+    background-color: #252525
 }
