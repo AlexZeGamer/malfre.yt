@@ -1,15 +1,22 @@
-header {
-    width: 100%;
-    /* margin: 0; */
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    padding: 30px;
-    background-color: black;
-    color: white;
-}
-
 body {
     cursor: url("./cursors/cursor.svg"), auto;
+    background-color: #222;
+    color: #CCC;
+}
+
+header, footer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: black;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin-top: 30px;
 }
 
 a:hover,
@@ -34,23 +41,36 @@ input[type='url']:hover {
 
 #homebutton {
     float: left;
-    width: 0;
+}
+
+#en {
+    float: right;
 }
 
 #homebutton img {
     filter: invert(30%);
-    width: 30px;
-    transition-property: width, filter;
+    height: 30px;
+    transition-property: height, filter;
     transition-duration: 0.5s;
-
 }
 
 #homebutton img:hover {
     filter: invert(50%);
-    width: 35px;
-    transition-property: width, filter;
+    height: 35px;
+    transition-property: height, filter;
     transition-duration: 1.5s;
+}
 
+#en img {
+    height: 30px;
+    transition-property: height;
+    transition-duration: 0.5s;
+}
+
+#en img:hover {
+    height: 35px;
+    transition-property: height;
+    transition-duration: 1.5s;
 }
 
 .liens {
@@ -70,7 +90,8 @@ input[type='url']:hover {
 }
 
 .liens ul li img,
-input[type="image"] {
+input[type="image"],
+.icon {
     filter: invert(70%);
     width: 30px;
     transition-property: width, filter;
@@ -78,7 +99,8 @@ input[type="image"] {
 }
 
 .liens ul li:hover img,
-input[type="image"]:hover {
+input[type="image"]:hover,
+.icon:hover {
     filter: invert(1);
     width: 40px;
     transition-property: width, filter;
@@ -116,4 +138,55 @@ input[type="image"]:hover {
 
 .dropdown-content>*:hover {
     background-color: #252525
+}
+
+#aboutme-div {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#aboutme-div ul li {
+    text-align: left;
+}
+
+#projects-timeline {
+    overflow-x: scroll;
+}
+
+#anecdote-div {
+    width: 70%;
+    height: auto;
+    border-radius: 25px;
+    background-color: #777;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+#refresh {
+    float: right;
+    position: relative;
+    margin: 20px;
+}
+
+#anecdote-emoji,
+#anecdote-text {
+    display: inline-block;
+    color: white;
+    font-size: auto;
+    transition-property: font-size;
+    transition-duration: 0.5s;
+}
+
+#anecdote-text:hover {
+    font-size: 105%;
+    transition-property: font-size;
+    transition-duration: 0.5s;
+}
+
+#anecdote-en_savoir_plus {
+    float: right;
+    text-decoration: underline;
+    font-weight: bold;
+    color: cornflowerblue;
+    margin: 5px;
 }

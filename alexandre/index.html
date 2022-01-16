@@ -18,14 +18,19 @@
 
     <link rel="shortcut icon" href="./sources/favicon.png">
 
-    <link rel="stylesheet" href="../www/sources/global.css" />
+    <link rel="stylesheet" href="https://www.malfre.yt/sources/global.css" />
     <link rel="stylesheet" href="./sources/style.css" />
+
+    <script src="sources/script.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="https://www.malfre.yt/" title="Page d'accueil" id="homebutton"><img src="./sources/icons/home.png" alt="Page d'accueil"/></a>
+        <a href="https://translate.google.com/translate?hl=en&sl=fr&u=http://alexandre.malfre.yt/" title="Translate in English" id="en"><img src="./sources/icons/uk_flag.svg" alt="Translate in English"/></a>
+        
         <h1>Alexandre MALFREYT</h1>
+        
         <div class="liens"><ul>
             <li><a href="https://www.twitter.com/AlexZeGamer" title="Twitter"><img src="./sources/icons/twitter.png" alt="Twitter"/></a></li>
             <li><a href="https://discord.bio/p/AlexZeGamer" title="Discord"><img src="./sources/icons/discord.png" alt="Discord"/></a></li>
@@ -45,18 +50,6 @@
             <li><a href="https://www.twitch.tv/alexzegamer" title="Twitch"><img src="./sources/icons/twitch.png" alt="Twitch"/></a></li>
             <li class="dropdown"><img src="./sources/icons/money.png" alt="Don"/>
                 <div class="dropdown-content">
-                    <script>
-                        function copy(text) {
-                            if (window.confirm(text+"\nCopier dans le presse papier ?")) {
-                                var dummy = document.createElement("textarea");
-                                document.body.appendChild(dummy);
-                                dummy.value = text;
-                                dummy.select();
-                                document.execCommand("copy");
-                                document.body.removeChild(dummy);
-                            }
-                        }
-                        </script>
                     <a href="https://www.paypal.me/AMalfreyt" title="Paypal"><img src="./sources/icons/paypal.png" alt="Paypal"/></a>
                     <input type="image" title="Bitcoin" onclick="copy('3DrMc8bs6vqu2VPY3T5L7DciXFkh4UQXHE')" src="./sources/icons/bitcoin.png" alt="Bitcoin"/>
                     <input type="image" title="Ethereum" onclick="copy('0x4d1F50E3f206A0008Dab099CF4705075A01cf534')" src="./sources/icons/ethereum.png" alt="Ethereum"/>
@@ -74,22 +67,33 @@
 
     <section>
 
-        <fieldset disabled>
-        <legend>Champ désactivé</legend>
-        <p>
-            <label>Nom : <input type="name" name="radio" value="régulier"> Régulier</label>
-        </p>
-        <p>
-            <label>Nombre : <input type="number"></label>
-        </p>
-        </fieldset>
+        <h2 id="aboutme">À propos de moi</h2>
+        <div id="aboutme-div">
+            <ul>
+                <li id="aboutme-age">... ans</li>
+                <li>Étudiant à Polytech Paris-Saclay (2021-2026)</li>
+                <li>Passionné de nouvelles technologies</li>
+            </ul>
+        </div>
 
-        <h2>Hello world !</h2>
-        <p>Fugiat eiusmod incididunt in sit sunt nisi sunt id duis. Ad aute est quis elit quis. Quis nisi fugiat anim dolore qui. Eu nulla adipisicing ad tempor laboris eiusmod ex.</p>
-        <p>Est culpa reprehenderit mollit ipsum velit excepteur esse sit enim incididunt officia ullamco cillum consectetur. Excepteur laboris irure commodo pariatur voluptate commodo. Incididunt duis id irure magna officia nisi dolor deserunt enim amet proident deserunt occaecat. Eu velit cillum aute ullamco elit ad mollit. Magna dolor fugiat labore excepteur ad occaecat ipsum sunt. Cillum ut et quis sunt tempor exercitation magna ex occaecat Lorem. Eiusmod pariatur duis consectetur occaecat voluptate laborum proident.</p>
-        <p>Cupidatat veniam veniam incididunt sit qui sint minim officia consequat dolor sunt sint. Elit incididunt ut elit deserunt ullamco. Est minim laborum ea ex in consectetur amet esse. Nostrud eiusmod sint quis dolore do sint exercitation duis ullamco cupidatat. Mollit in excepteur adipisicing incididunt nulla magna ex mollit. Cupidatat ipsum nulla id nulla amet. Adipisicing amet velit excepteur id amet velit non officia nisi commodo deserunt eu incididunt irure. Veniam culpa eiusmod magna voluptate eiusmod quis. Nisi aliquip fugiat nisi magna id ea excepteur amet.Ea irure ipsum ad est. Pariatur amet deserunt Lorem aliqua ad esse officia. Culpa eu nostrud ullamco ipsum ex id irure excepteur duis id Lorem eiusmod. Occaecat adipisicing laboris do eu in tempor incididunt nostrud aliqua. Duis labore veniam eu et esse dolore labore fugiat aliqua quis tempor proident sit. Cillum quis exercitation incididunt magna minim laborum aliquip nostrud. Consequat proident dolor adipisicing exercitation excepteur tempor laboris in quis aliqua sunt anim.</p>
-        <p>Amet qui veniam magna aliquip laborum laboris mollit pariatur. Sint minim culpa nostrud exercitation exercitation irure magna sit ea elit. Ipsum qui eu amet officia commodo est ut duis veniam minim. Cillum amet sunt ipsum fugiat id ea dolore officia aute in enim. Exercitation ullamco minim aute excepteur non culpa eu fugiat aliqua fugiat minim officia ipsum.</p>
+        <h2 id="projects">Mes projets</h2>
+        <!-- Timeline déroulante de gauche à droite -->
+        <div id="projects-timeline"></div>
+
+        <h2 id="anecdote">Une anecdote aléatoire sur moi</h2>
+        <div id="anecdote-div" onload="getAnecdote()">
+            <img src="./sources/icons/refresh.png" alt="Une autre !" class="icon" id="refresh" onclick="getAnecdote()"/>
+            <h1 id="anecdote-emoji">⌛</h1>
+            <p id="anecdote-text">Chargement en cours...</p>
+            <a href='#' id="anecdote-en_savoir_plus">En savoir plus</a>
+        </div>
+
     </section>
+
+    <footer>
+        <h1>Footer</h1>
+        <p>Comment ça va vous sinon ?</p>
+    </footer>
 </body>
 
 </html>
